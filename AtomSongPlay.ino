@@ -192,12 +192,12 @@ int makesound()
 			}
 			ppos++;
 			if(ppos >= DATAMAX){
-				return(0);  // 継続演奏
+				return(0);  // 演奏終了
 			}
 		}
 		else{
 			// 次の時間（発音分）
-			return(1);  // 演奏終了
+			return(1);  // 演奏継続
 		}
 	}
 	
