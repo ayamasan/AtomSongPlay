@@ -173,11 +173,7 @@ int makesound()
 			else{
 				// SONG[]に新たな音を加算する
 				for(i=0; i<SNDLEN/2; i++){
-					dd = (int)SONG[sspos+i] + (int)s[melody[ppos][1]][i];
-					// 同時発音数でゲイン調整
-					if(gain < 1.0){
-						dd = (int)((double)dd * gain);
-					}
+					dd = (int)SONG[sspos+i] + (int)((double)s[melody[ppos][1]][i] * gain);
 					// オーバーフローリミッタ
 					if(dd > 32767){
 						SONG[sspos+i] = 32767;
